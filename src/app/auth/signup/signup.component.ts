@@ -10,19 +10,18 @@ import { UserserviceService } from '../../userservice.service';
 export class SignupComponent implements OnInit {
 
   constructor(private router: Router,
-    private signup: UserserviceService) { }
+    private signupser: UserserviceService) { }
 
   ngOnInit() {
   }
   handlesubmit(SignupForm) {
-    this.signup.createList(SignupForm.value)
+    console.log(SignupForm.value);
+    this.signupser.signup(SignupForm.value)
       .subscribe((data) => {
         console.log(data);
         this.router.navigate(['/login']);
       }, (error) => {
-        console.log(error);
+        console.log(error.message);
       });
-
   }
-
 }

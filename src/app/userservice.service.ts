@@ -8,17 +8,19 @@ import { HttpClient } from '@angular/common/http';
 export class UserserviceService {
 
   constructor(private http: HttpClient) { }
-
-  createList(data) {
-    return this.http.post('http://localhost:3000/signup', data);
+  signup(data) {
+    return this.http.post('http://localhost:2021', data);
   }
-  logindata(data) {
-    return this.http.post('http://localhost:3000/login', data);
+  login(data) {
+    return this.http.post('http://localhost:2021/get', data);
+  }
+  forget(data) {
+    return this.http.post('http://localhost:2021/forgot', data);
+  }
+  change(data) {
+    return this.http.post('http://localhost:2021/update', data);
   }
   reset(data) {
-    return this.http.post('http://localhost:3000/reset', data);
-  }
-  otp(data) {
-    return this.http.post('http://localhost:3000/login', data);
+    return this.http.post('http://localhost:2021/reset', data);
   }
 }

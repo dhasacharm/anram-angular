@@ -1,19 +1,15 @@
-
 <div fxLayout="row" fxLayoutAlign="center center" class="mt-5">
   <form name="SignupForm" #SignupForm="ngForm" (ngSubmit)='handlesubmit(SignupForm)'>
     <mat-card class="example-card">
       <h4 class="text-center">register</h4>
       <mat-form-field>
-        <input matInput placeholder="employeeid" type="text" name="employeeID" ngModel required>
+        <input matInput placeholder="employeecode" type="text" name="EmployeeCode" ngModel required>
       </mat-form-field><br>
       <mat-form-field>
-        <input matInput placeholder="email" type="email" name="email" ngModel required>
+        <input matInput placeholder="email" type="email" name="Email" ngModel required>
       </mat-form-field><br>
       <mat-form-field>
-        <input matInput placeholder="password" type="password" name="password" ngModel required>
-      </mat-form-field><br>
-      <mat-form-field>
-        <input matInput placeholder="confrompassword" type="password" name="conformpassword" ngModel required minlength="6">
+        <input matInput placeholder="password" type="password" name="Password" ngModel required>
       </mat-form-field><br>
       <div>
         <button mat-flat-button color="primary" type="submit" [disabled]="SignupForm.invalid">Register</button>

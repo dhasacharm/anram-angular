@@ -3,14 +3,16 @@
     <mat-card class="example-card">
       <h4 class="text-center">login</h4>
       <mat-form-field>
-        <input matInput placeholder="employeeID" type="text" name="employeeID" ngModel required>
+        <input matInput placeholder="EmployeeCode" type="text" name="EmployeeCode" ngModel required>
       </mat-form-field><br>
       <mat-form-field>
-        <input matInput placeholder="password" type="password" name="password" ngModel required minlength="6">
+        <input matInput placeholder="password" type="password" name="Password" ngModel required minlength="6">
       </mat-form-field><br>
       <div>
         <button mat-flat-button color="primary" type="submit" [disabled]="loginForm.invalid">login</button>
       </div>
+      <a (click)="forget()">forget password</a><br>
+      <a (click)="change()">change password</a>
     </mat-card>
   </form>
 </div>

@@ -19,15 +19,20 @@ export class ResetpasswordComponent implements OnInit {
   handlesubmit(ResetForm) {
     this.otp = true;
     this.hide = false;
-    this.reset.reset(ResetForm.value)
-    .subscribe((data) => {
-      this.router.navigate(['/login']);
-    }, (error) => {
-      console.log(error.message);
-      alert(error.message);
-    });
+    this.reset.change(ResetForm.value)
+      .subscribe((data) => {
+        console.log(data);
+      }, (error) => {
+        console.log(error.message);
+      });
   }
   submit(setForm) {
     console.log(setForm.value);
+    this.reset.change(setForm.value)
+      .subscribe((data) => {
+        console.log(data);
+      }, (error) => {
+        console.log(error.message);
+      });
   }
 }

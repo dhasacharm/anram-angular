@@ -17,19 +17,18 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
   handlesubmit(loginForm) {
-    this.login.logindata(loginForm.value)
-      .subscribe((data) => {
-        this.router.navigate(['/forget']);
-      }, (error) => {
-        console.log(error.message);
-        alert('invalid users');
-      });
-
+    console.log(loginForm.value);
+    this.login.login(loginForm.value)
+    .subscribe((data) => {
+      console.log(data);
+    }, (error) => {
+      console.log(error.message);
+    });
   }
   forget() {
     this.router.navigate(['/forget']);
   }
-  reset() {
+  change() {
     this.router.navigate(['/reset']);
   }
 }
