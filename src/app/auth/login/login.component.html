@@ -1,0 +1,16 @@
+<div fxLayout="row" fxLayoutAlign="center center" class="mt-5">
+  <form name="LoginForm" #loginForm="ngForm" (ngSubmit)='handlesubmit(loginForm)' fxLayout="row">
+    <mat-card class="example-card">
+      <h4 class="text-center">login</h4>
+      <mat-form-field>
+        <input matInput placeholder="employeeID" type="text" name="employeeID" ngModel required>
+      </mat-form-field><br>
+      <mat-form-field>
+        <input matInput placeholder="password" type="password" name="password" ngModel required minlength="6">
+      </mat-form-field><br>
+      <div>
+        <button mat-flat-button color="primary" type="submit" [disabled]="loginForm.invalid">login</button>
+      </div>
+    </mat-card>
+  </form>
+</div>
