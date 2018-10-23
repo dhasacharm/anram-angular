@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
   constructor(private router: Router,
     private login: UserserviceService
   ) { }
-
+  changepass = false;
   ngOnInit() {
   }
   userLogin(loginForm) {
@@ -30,5 +30,7 @@ export class LoginComponent implements OnInit {
   forget() {
     this.router.navigate(['/forget']);
   }
-
+  change() {
+    this.changepass = true;
+  }
 }

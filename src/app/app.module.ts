@@ -29,6 +29,7 @@ import { EmployeePortalComponent } from './employee-portal/employee-portal.compo
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { HrmsMangamentComponent } from './hrms-mangament/hrms-mangament.component';
 import { UserHomeComponent } from './user-home/user-home.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
 
 const appRoutes: Routes = [
   {
@@ -76,6 +77,10 @@ const appRoutes: Routes = [
     component: EmployeeLeaveListComponent
   },
   {
+    path: 'change-pass',
+    component: ChangePasswordComponent
+  },
+  {
     path: '**',
     redirectTo: '/'
   }
@@ -96,7 +101,8 @@ const appRoutes: Routes = [
     EmployeePortalComponent,
     UserProfileComponent,
     HrmsMangamentComponent,
-    UserHomeComponent
+    UserHomeComponent,
+    ChangePasswordComponent
   ],
   imports: [
     BrowserModule,
