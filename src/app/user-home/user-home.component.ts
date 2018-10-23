@@ -15,7 +15,8 @@ export class UserHomeComponent implements OnInit {
   ngOnInit() {
   }
   starttime(id) {
-    this.service.starttime(id)
+    console.log(id);
+    this.service.time(id)
       .subscribe((data: any) => {
         console.log(data);
       });

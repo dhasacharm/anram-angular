@@ -32,7 +32,7 @@ export class UserserviceService {
   leave(data) {
     return this.http.post('http://localhost:2021/mail', data);
   }
-  starttime(data) {
+  time(data) {
     return this.http.post('http://localhost:2021/punch', data);
   }
 }
