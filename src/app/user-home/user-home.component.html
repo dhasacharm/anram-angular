@@ -1,11 +1,13 @@
-<div fxLayout="row" class="loginMargin">
-  <div fxFlex fxLayout="column">
-    <div fxLayout="column" fxFlexAlign="start">
-      <mat-card class="example-card">
-        <img mat-card-image src="../../assets/user1.jfif" alt="Photo of a users"class="w3-circle">
-      </mat-card>
-      <button class="mt-5" (click)="starttime(id)" mat-raised-button color="accent">Start Time</button>
-      <button class="mt-5" (click)="endtime()" mat-raised-button color="accent">End Time</button>
-    </div>
-  </div>
+<div>
+    <div fxFlex fxLayout="column" fxLayoutAlign="center center" class="home-container">
+        <!-- ProfilePic -->
+        <div fxFlex>
+          <img src="/assets/user2.png" alt="Photo of a users" class="employee-profile-picture">
+        </div>
+        <!-- Start-End Time Controls -->
+        <div fxFlex fxLayoutGap="10px">
+          <button (click)="starttime(id)" mat-raised-button color="accent">Start Time</button>
+          <button (click)="endtime()" mat-raised-button color="accent">End Time</button>
+        </div>
+      </div>
 </div>
