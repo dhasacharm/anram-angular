@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatPaginator, MatTableDataSource, MatSort } from '@angular/material';
+
 
 @Component({
   selector: 'app-user-profile',

@@ -3,5 +3,7 @@
 body{
     margin: 0;
     padding: 0;
-    /* background-image: url('./assets/loginBgPic.jpg') */
+    background-image: url(https://wallscover.com/images/connection-8.jpg);
+    background-repeat: no-repeat;
+    background-size: cover
 }
