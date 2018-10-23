@@ -1,0 +1,21 @@
+<div fxLayout="row" fxLayoutAlign="center center" class="mt-5">
+  <form name="LeaveForm" #LeaveForm="ngForm" (ngSubmit)='handlesubmit(LeaveForm)'>
+    <h2 class="text-center">leave</h2>
+    <mat-form-field>
+      <input matInput [matDatepicker]="picker1" placeholder="Choose a from date" name="from" ngModel required>
+      <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+      <mat-datepicker #picker1 [startAt]="startDate"></mat-datepicker>
+    </mat-form-field><br>
+    <mat-form-field>
+      <input matInput [matDatepicker]="picker2" placeholder="Choose an to date" name="to" ngModel required>
+      <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+      <mat-datepicker #picker2 [startAt]="endDate"></mat-datepicker>
+    </mat-form-field><br>
+    <mat-form-field>
+      <input matInput placeholder="description" type="text" name="description" ngModel required>
+    </mat-form-field>
+    <div>
+      <button mat-flat-button color="primary" type="submit" [disabled]="LeaveForm.invalid">submit</button>
+    </div>
+  </form>
+</div>

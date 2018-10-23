@@ -1,19 +1,35 @@
 <div fxLayout="row" fxLayoutAlign="center center" class="mt-5">
   <form name="SignupForm" #SignupForm="ngForm" (ngSubmit)='handlesubmit(SignupForm)'>
-    <mat-card class="example-card">
-      <h4 class="text-center">register</h4>
-      <mat-form-field>
-        <input matInput placeholder="employeecode" type="text" name="EmployeeCode" ngModel required>
-      </mat-form-field><br>
-      <mat-form-field>
-        <input matInput placeholder="email" type="email" name="Email" ngModel required>
-      </mat-form-field><br>
-      <mat-form-field>
-        <input matInput placeholder="password" type="password" name="Password" ngModel required>
-      </mat-form-field><br>
-      <div>
-        <button mat-flat-button color="primary" type="submit" [disabled]="SignupForm.invalid">Register</button>
-      </div>
-    </mat-card>
+    <h4 class="text-center">register</h4>
+    <mat-form-field>
+      <input matInput placeholder="email" type="email" name="Email" ngModel required>
+    </mat-form-field><br>
+    <mat-form-field>
+      <input matInput placeholder="password" type="password" name="Password" ngModel required>
+    </mat-form-field><br>
+    <mat-form-field>
+      <input matInput placeholder="FatherName" type="text" name="FatherName" ngModel required>
+    </mat-form-field><br>
+    <mat-form-field>
+      <input matInput placeholder="Address" type="text" name="Address" ngModel required>
+    </mat-form-field><br>
+    <mat-form-field>
+      <input matInput placeholder="PermananentAddress" type="text" name="PermananentAddress" ngModel required>
+    </mat-form-field><br>
+    <mat-form-field>
+      <input matInput placeholder="AdhaarNo" type="text" name="AdhaarNo" ngModel required>
+    </mat-form-field><br>
+    <mat-form-field>
+      <input matInput placeholder="PancardNo" type="text" name="PancardNo" ngModel required>
+    </mat-form-field><br>
+    <mat-form-field>
+      <input matInput placeholder="EmployeeContactNo" type="text" name="EmployeeContactNo" ngModel required>
+    </mat-form-field><br>
+    <mat-form-field>
+      <input matInput placeholder="EmergencyContactNo" type="text" name="EmergencyContactNo" ngModel required>
+    </mat-form-field>
+    <div>
+      <button mat-flat-button color="primary" type="submit" [disabled]="SignupForm.invalid">Register</button>
+    </div>
   </form>
 </div>

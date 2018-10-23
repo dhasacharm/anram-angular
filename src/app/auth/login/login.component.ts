@@ -16,19 +16,19 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
   }
-  handlesubmit(loginForm) {
+  userLogin(loginForm) {
     console.log(loginForm.value);
     this.login.login(loginForm.value)
-    .subscribe((data) => {
-      console.log(data);
-    }, (error) => {
-      console.log(error.message);
-    });
+      .subscribe((data: any) => {
+        localStorage.setItem('token', data.token);
+        this.router.navigate(['/leave']);
+        console.log(data);
+      }, (error) => {
+        console.log(error.message);
+      });
   }
   forget() {
     this.router.navigate(['/forget']);
   }
-  change() {
-    this.router.navigate(['/reset']);
-  }
+
 }

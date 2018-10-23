@@ -1,0 +1,45 @@
+<table mat-table [dataSource]="UserProfiles" class="mat-elevation-z8">
+
+  <ng-container matColumnDef="Email">
+    <th mat-header-cell *matHeaderCellDef> Email </th>
+    <td mat-cell *matCellDef="let element"> {{element.Email}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="FatherName">
+    <th mat-header-cell *matHeaderCellDef> FatherName </th>
+    <td mat-cell *matCellDef="let element"> {{element.FatherName}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="Address">
+    <th mat-header-cell *matHeaderCellDef> Address </th>
+    <td mat-cell *matCellDef="let element"> {{element.Address}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="PermananentAddress">
+    <th mat-header-cell *matHeaderCellDef> PermananentAddress </th>
+    <td mat-cell *matCellDef="let element"> {{element.PermananentAddress}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="AdhaarNo">
+    <th mat-header-cell *matHeaderCellDef> AdhaarNo </th>
+    <td mat-cell *matCellDef="let element"> {{element.AdhaarNo}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="PancardNo">
+    <th mat-header-cell *matHeaderCellDef> PancardNo </th>
+    <td mat-cell *matCellDef="let element"> {{element.PancardNo}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="EmployeeContactNo">
+    <th mat-header-cell *matHeaderCellDef> EmployeeContactNo </th>
+    <td mat-cell *matCellDef="let element"> {{element.EmployeeContactNo}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="EmergencyContactNo">
+    <th mat-header-cell *matHeaderCellDef> EmergencyContactNo </th>
+    <td mat-cell *matCellDef="let element"> {{element.EmergencyContactNo}} </td>
+  </ng-container>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+
+</table>
