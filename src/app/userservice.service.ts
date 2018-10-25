@@ -30,9 +30,18 @@ export class UserserviceService {
     return this.http.post('http://localhost:2021/reset', data);
   }
   leave(data) {
-    return this.http.post('http://localhost:2021/mail', data);
+    return this.http.post('http://localhost:2021/leave', data);
   }
   time(data) {
+    console.log(data);
     return this.http.post('http://localhost:2021/punch', data);
+  }
+  endtime(data) {
+    console.log(data);
+    return this.http.post('http://localhost:2021/punch', data);
+  }
+  end(data) {
+    const id = data._id;
+    return this.http.put(`http://localhost:2021/punch/${id}`, data);
   }
 }

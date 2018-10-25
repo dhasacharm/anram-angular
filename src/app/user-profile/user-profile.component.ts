@@ -8,10 +8,27 @@ import { MatPaginator, MatTableDataSource, MatSort } from '@angular/material';
   styleUrls: ['./user-profile.component.css']
 })
 export class UserProfileComponent implements OnInit {
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
 
-  constructor() { }
+  displayedColumns = ['SNo', 'Name', 'Age'];
+  friends: any = [
+    {
+      name: 'Yuvaraj',
+      age: '23',
+    }
+  ];
+
+  tableData = new MatTableDataSource<any[]>(this.friends);
+
+
+  constructor() {
+  }
+
 
   ngOnInit() {
+    this.tableData.paginator = this.paginator;
+    this.tableData.sort = this.sort;
   }
 
 }
