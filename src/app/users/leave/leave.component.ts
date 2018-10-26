@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import { UserserviceService } from '../userservice.service';
+import { LeaveService } from '../../services/leave.service';
 @Component({
   selector: 'app-leave',
   templateUrl: './leave.component.html',
@@ -9,15 +9,14 @@ import { UserserviceService } from '../userservice.service';
 export class LeaveComponent implements OnInit {
 
   constructor(private router: Router,
-    private leave: UserserviceService) { }
+    private leaveService: LeaveService) { }
 
   ngOnInit() {
   }
   handlesubmit(LeaveForm) {
-    console.log(LeaveForm.value);
-    this.leave.leave(LeaveForm.value)
+    this.leaveService.leave(LeaveForm.value)
       .subscribe((data) => {
-        console.log('hiii', data);
+        console.log(data);
       }, (error) => {
         console.log(error.message);
       });

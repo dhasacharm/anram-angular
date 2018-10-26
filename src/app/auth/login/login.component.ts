@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import { UserserviceService } from '../../userservice.service';
+import { LoginService } from '../../services/login.service';
 
 
 @Component({
@@ -11,14 +11,14 @@ import { UserserviceService } from '../../userservice.service';
 export class LoginComponent implements OnInit {
 
   constructor(private router: Router,
-    private login: UserserviceService
+    private loginService: LoginService
   ) { }
   changepass = false;
   ngOnInit() {
   }
   userLogin(loginForm) {
     console.log(loginForm.value);
-    this.login.login(loginForm.value)
+    this.loginService.login(loginForm.value)
       .subscribe((data: any) => {
         localStorage.setItem('token', data.token);
         this.router.navigate(['/home']);

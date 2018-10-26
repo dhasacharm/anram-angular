@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UserserviceService } from '../../userservice.service';
+import { HelpersService } from '../../services/helpers.service';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 
@@ -12,14 +12,14 @@ export class ResetpasswordComponent implements OnInit {
   otp = false;
   hide = true;
   constructor(private router: Router,
-    private reset: UserserviceService) { }
+    private resetService: HelpersService) { }
 
   ngOnInit() {
   }
   handlesubmit(ResetForm) {
     this.otp = true;
     this.hide = false;
-    this.reset.change(ResetForm.value)
+    this.resetService.change(ResetForm.value)
       .subscribe((data) => {
         console.log(data);
       }, (error) => {
@@ -28,7 +28,7 @@ export class ResetpasswordComponent implements OnInit {
   }
   submit(setForm) {
     console.log(setForm.value);
-    this.reset.change(setForm.value)
+    this.resetService.change(setForm.value)
       .subscribe((data) => {
         console.log(data);
       }, (error) => {

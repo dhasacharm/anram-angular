@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import { UserserviceService } from '../../userservice.service';
+import { HelpersService } from '../../services/helpers.service';
 
 @Component({
   selector: 'app-forgetpassword',
@@ -10,13 +10,13 @@ import { UserserviceService } from '../../userservice.service';
 export class ForgetpasswordComponent implements OnInit {
 
   constructor(private router: Router,
-    private login: UserserviceService) { }
+    private ForgetService: HelpersService) { }
 
   ngOnInit() {
   }
   handlesubmit(ForgetForm) {
     console.log(ForgetForm.value);
-    this.login.forget(ForgetForm.value)
+    this.ForgetService.forget(ForgetForm.value)
       .subscribe((data) => {
         console.log(data);
       }, (error) => {

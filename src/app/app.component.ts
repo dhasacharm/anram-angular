@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router, ActivationEnd } from '../../node_modules/@angular/router';
-import { UserserviceService } from './userservice.service';
+import { UserserviceService } from './services/userservice.service';
 
 @Component({
   selector: 'app-root',

@@ -2,15 +2,15 @@
 <mat-toolbar class="navbar">
   <mat-toolbar-row>
     <!--  <span>HOME</span> -->
-    <span><img src="../../assets/download.jfif" width="100" height="50" alt="">
-    </span>
+     <a><img src="../../assets/download.jfif" width="100" height="50" alt="">
+    </a>
     <span class="spacer"></span>
-    <a mat-button *ngIf="!isLoggedIn" routerLink="login">LOGIN</a>
-    <a mat-button *ngIf="!isLoggedIn" routerLink="signup">SIGNUP</a>
-    <!-- <a mat-button *ngIf="isLoggedIn" routerLink="forget">FORGET</a> -->
+     <a mat-button *ngIf="!isLoggedIn" routerLink="login">LOGIN</a>
+     <a mat-button *ngIf="!isLoggedIn" routerLink="signup">SIGNUP</a>
+     <!-- <a mat-button *ngIf="isLoggedIn" routerLink="forget">FORGET</a> -->
     <!-- <a mat-button *ngIf="isLoggedIn" routerLink="reset">RESET</a> -->
     <!-- <a mat-button *ngIf="isLoggedIn" routerLink="list">list</a> -->
-    <!-- <a mat-button *ngIf="isLoggedIn" routerLink="leave">leave</a> -->
+     <a mat-button *ngIf="isLoggedIn" routerLink="employeeleave">leave</a>
     <a mat-button *ngIf="isLoggedIn" routerLink="home"> HOME</a>
     <a mat-button *ngIf="isLoggedIn" routerLink="users"> PROFILE</a>
     <a mat-button *ngIf="isLoggedIn" routerLink="mangament">HRMS MANAGAMENT</a>
@@ -19,5 +19,5 @@
       Logout
     </a>
   </mat-toolbar-row>
-</mat-toolbar>
-<router-outlet></router-outlet>
+</mat-toolbar> 
+ <router-outlet></router-outlet> 

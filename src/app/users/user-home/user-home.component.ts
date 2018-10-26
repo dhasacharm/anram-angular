@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UserserviceService } from '../userservice.service';
+import { PunchingService } from '../../services/punching.service';
 import { toBase64String } from '@angular/compiler/src/output/source_map';
 
 
@@ -11,24 +11,22 @@ import { toBase64String } from '@angular/compiler/src/output/source_map';
 })
 export class UserHomeComponent implements OnInit {
 
-  constructor(private service: UserserviceService) { }
+  constructor(private punchingService: PunchingService) { }
 
   ngOnInit() {
   }
   starttime(event) {
-    console.log(localStorage.getItem('token'));
     const a = this.parseJwt(localStorage.getItem('token'));
     console.log(a.id);
-    this.service.time(a.id)
+    this.punchingService.start(a.id)
       .subscribe((data: any) => {
         console.log(data);
       });
   }
   endtime() {
-    console.log(localStorage.getItem('token'));
     const a = this.parseJwt(localStorage.getItem('token'));
     console.log(a.id);
-    this.service.endtime(a.id)
+    this.punchingService.end(a.id)
       .subscribe((data: any) => {
         console.log(data);
       });
