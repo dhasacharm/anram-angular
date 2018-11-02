@@ -9,6 +9,7 @@ export class SignupService {
   constructor(private http: HttpClient) { }
 
   signup(data) {
-    return this.http.post('http://localhost:2021', data);
+    console.log('hii');
+    return this.http.post('http://localhost:2021/users', data);
   }
 }

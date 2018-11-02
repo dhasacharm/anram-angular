@@ -15,10 +15,15 @@ export class UserHomeComponent implements OnInit {
 
   ngOnInit() {
   }
-  starttime(event) {
+  parseJwt(token) {
+    const base64Url = token.split('.')[1];
+    const base64 = base64Url.replace('-', '+').replace('_', '/');
+    return JSON.parse(window.atob(base64));
+  }
+  starttime() {
     const a = this.parseJwt(localStorage.getItem('token'));
-    console.log(a.id);
-    this.punchingService.start(a.id)
+    console.log(a.iat);
+    this.punchingService.start(a)
       .subscribe((data: any) => {
         console.log(data);
       });
@@ -32,9 +37,5 @@ export class UserHomeComponent implements OnInit {
       });
 
   }
-  parseJwt(token) {
-    const base64Url = token.split('.')[1];
-    const base64 = base64Url.replace('-', '+').replace('_', '/');
-    return JSON.parse(window.atob(base64));
-  }
+
 }

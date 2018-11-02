@@ -1,35 +1,42 @@
-<div fxLayout="row" fxLayoutAlign="start center" class="signupmargin">
-  <form name="SignupForm" #SignupForm="ngForm" (ngSubmit)='handlesubmit(SignupForm)'>
-    <h4 class="text-center">REGISTER:</h4>
-    <mat-form-field>
-      <input matInput placeholder="email" type="Email" name="Email" ngModel required>
-    </mat-form-field><br>
-    <mat-form-field>
-      <input matInput placeholder="password" type="Password" name="Password" ngModel required>
-    </mat-form-field><br>
-    <mat-form-field>
-      <input matInput placeholder="FatherName" type="text" name="FatherName" ngModel required>
-    </mat-form-field><br>
-    <mat-form-field>
-      <input matInput placeholder="Address" type="text" name="Address" ngModel required>
-    </mat-form-field><br>
-    <mat-form-field>
-      <input matInput placeholder="PermananentAddress" type="text" name="PermananentAddress" ngModel required>
-    </mat-form-field><br>
-    <mat-form-field>
-      <input matInput placeholder="AdhaarNo" type="text" name="AdhaarNo" ngModel required>
-    </mat-form-field><br>
-    <mat-form-field>
-      <input matInput placeholder="PancardNo" type="text" name="PancardNo" ngModel required>
-    </mat-form-field><br>
-    <mat-form-field>
-      <input matInput placeholder="EmployeeContactNo" type="text" name="EmployeeContactNo" ngModel required>
-    </mat-form-field><br>
-    <mat-form-field>
-      <input matInput placeholder="EmergencyContactNo" type="text" name="EmergencyContactNo" ngModel required>
+<div fxLayout="column" fxLayoutAlign="center center" class="usermargin">
+  <form fxLayout="column" fxLayoutAlign="center center" name="NewEmployee" #NewEmployee="ngForm" (ngSubmit)='handlesubmit(NewEmployee)'>
+    <h4 class="employee-form-title">{{employeeName.value || 'New Employee'}}</h4>
+    <mat-form-field fxFlexFill>
+      <input matInput email placeholder="Email" type="email" name="Email" ngModel required>
     </mat-form-field>
-    <div>
-      <button mat-flat-button color="primary" type="submit" [disabled]="SignupForm.invalid">Register</button>
+    <div fxLayout="row" fxFlexFill fxLayoutGap="10px">
+      <mat-form-field fxFlex>
+        <input matInput placeholder="Employee Name" type="text" name="Name" #employeeName ngModel required>
+      </mat-form-field>
+      <mat-form-field fxFlex>
+        <input matInput placeholder="FatherName" type="text" name="FatherName" ngModel required>
+      </mat-form-field>
+    </div>
+
+    <mat-form-field fxFlexFill>
+      <textarea matInput placeholder="Address"></textarea>
+    </mat-form-field>
+    <mat-form-field fxFlexFill>
+      <textarea matInput placeholder="Permanenet address"></textarea>
+    </mat-form-field>
+    <div fxLayout="row" fxLayoutGap="10px" fxFlexFill>
+      <mat-form-field fxFlex>
+        <input matInput placeholder="AdhaarNo" type="text" name="AdhaarNo" ngModel required>
+      </mat-form-field>
+      <mat-form-field fxFlex>
+        <input matInput placeholder="PancardNo" type="text" name="PancardNo" ngModel required>
+      </mat-form-field>
+    </div>
+    <div fxLayout="row" fxLayoutGap="10px" fxFlexFill>
+      <mat-form-field fxFlex>
+        <input matInput placeholder="EmployeeContactNo" type="tel" name="Mobile" ngModel required>
+      </mat-form-field>
+      <mat-form-field fxFlex>
+        <input matInput placeholder="EmergencyContactNo" type="text" name="Emergency Mobile No" ngModel required>
+      </mat-form-field>
+    </div>
+    <div fxFlex>
+      <button mat-flat-button color="primary" type="submit" [disabled]="NewEmployee.invalid">Submit</button>
     </div>
   </form>
 </div>

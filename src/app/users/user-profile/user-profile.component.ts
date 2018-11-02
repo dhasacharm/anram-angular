@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator, MatTableDataSource, MatSort } from '@angular/material';
+import { UserserviceService } from '../../services/userservice.service';
+
 
 
 @Component({
@@ -8,27 +10,32 @@ import { MatPaginator, MatTableDataSource, MatSort } from '@angular/material';
   styleUrls: ['./user-profile.component.css']
 })
 export class UserProfileComponent implements OnInit {
-  @ViewChild(MatPaginator) paginator: MatPaginator;
-  @ViewChild(MatSort) sort: MatSort;
 
-  displayedColumns = ['SNo', 'Name', 'Age'];
-  friends: any = [
-    {
-      name: 'Yuvaraj',
-      age: '23',
-    }
+  users: any;
+
+  displayedColumns = [
+    'Email',
+    'FatherName', 'Address',
+    'PermananentAddress', 'AdhaarNo', 'PancardNo', 'EmployeeContactNo', 'EmergencyContactNo'
   ];
 
-  tableData = new MatTableDataSource<any[]>(this.friends);
 
+  tableData = new MatTableDataSource<any>(this.users);
 
-  constructor() {
+  constructor(private userservice: UserserviceService) {
+    this.userservice.getprofile()
+      .subscribe(
+        result => {
+          console.log(result);
+          this.users = result;
+          this.tableData = this.users;
+        }
+      );
   }
 
 
+
   ngOnInit() {
-    this.tableData.paginator = this.paginator;
-    this.tableData.sort = this.sort;
   }
 
 }

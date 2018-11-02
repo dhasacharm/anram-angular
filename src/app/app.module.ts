@@ -56,7 +56,7 @@ const appRoutes: Routes = [
   },
   {
     path: '',
-    component: SignupComponent
+    component: LoginComponent
   },
   {
     path: 'forget',
@@ -75,7 +75,7 @@ const appRoutes: Routes = [
     component: EmployeeLeaveListComponent
   },
   {
-    path: 'change-pass',
+    path: 'change',
     component: ChangePasswordComponent
   },
   {

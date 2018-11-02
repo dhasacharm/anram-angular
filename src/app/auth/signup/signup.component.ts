@@ -14,11 +14,10 @@ export class SignupComponent implements OnInit {
 
   ngOnInit() {
   }
-  handlesubmit(SignupForm) {
-    console.log(SignupForm.value);
-    this.signupService.signup(SignupForm.value)
+  handlesubmit(NewEmployee) {
+    this.signupService.signup(NewEmployee.value)
       .subscribe((data) => {
-        console.log(data);
+        console.log('hii');
         this.router.navigate(['/login']);
       }, (error) => {
         console.log(error.message);

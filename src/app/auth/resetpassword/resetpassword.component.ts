@@ -9,23 +9,23 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
   styleUrls: ['./resetpassword.component.css']
 })
 export class ResetpasswordComponent implements OnInit {
-  otp = false;
-  hide = true;
+  // otp = false;
+  // hide = true;
   constructor(private router: Router,
     private resetService: HelpersService) { }
 
   ngOnInit() {
   }
-  handlesubmit(ResetForm) {
-    this.otp = true;
-    this.hide = false;
-    this.resetService.change(ResetForm.value)
-      .subscribe((data) => {
-        console.log(data);
-      }, (error) => {
-        console.log(error.message);
-      });
-  }
+  // handlesubmit(ResetForm) {
+  //   this.otp = true;
+  //   this.hide = false;
+  //   this.resetService.change(ResetForm.value)
+  //     .subscribe((data) => {
+  //       console.log(data);
+  //     }, (error) => {
+  //       console.log(error.message);
+  //     });
+  // }
   submit(setForm) {
     console.log(setForm.value);
     this.resetService.change(setForm.value)

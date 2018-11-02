@@ -18,5 +18,4 @@ export class PunchingService {
     const id = data._id;
     return this.http.put(`http://localhost:2021/punch/${id}`, data);
   }
-
 }

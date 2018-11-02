@@ -15,14 +15,7 @@ export class EmployeeLeaveListComponent implements OnInit {
 
   displayedColumns = ['SNo', 'Name', 'from', 'to', 'actions'];
 
-  users = [{
-    name: 'medical',
-    employeeId: '1234',
-    from: '2018-10-21T18:30:00.000Z',
-    isApproved: 'pending',
-    to: '2018-10-14T18:30:00.000Z',
-    updatedAt: '2018-10-21T12:07:45.688Z'
-  }];
+  users: any;
 
 
   tableData = new MatTableDataSource<any>(this.users);
@@ -30,15 +23,14 @@ export class EmployeeLeaveListComponent implements OnInit {
   constructor(
     private leaveService: LeaveService
   ) {
-    // this.leaveService.getLeaves()
-    //   .subscribe(
-    //     result => {
-    //       console.log(result);
-    //       this.users = result;
-    //       console.log(this.users);
-    //       console.log(this.tableData);
-    //     }
-    //   );
+    this.leaveService.getLeaves()
+      .subscribe(
+        result => {
+          console.log(result);
+          this.users = result;
+          this.tableData = this.users;
+        }
+      );
   }
 
   ngOnInit() {
